@@ -1,0 +1,135 @@
+<DOCTYPE html>
+	<head>
+		<title>:: Calculadora de IMC ::</title>
+		<meta charset="utf-8"/>
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+		<style type="text/css">
+
+			label{
+				font-weight: bold;
+			}
+			.FormCentralizado{
+				width: 350;
+    			margin: 70 auto;
+    			background-color: gray;
+			}
+			.TituloCentralizado{
+				width: 400;
+				margin: 0 auto;
+			}
+
+		</style>
+
+	</head>
+	<body>
+		
+		<div>
+			<div class="container">
+				<div class="TituloCentralizado"> <h1 style="background-color: rgb(0,255,255); border-radius: 10px; color: rgb(50,153,159); text-align: center;"> Calculadora do IMC </h1> </div>	
+		  		<form class="FormCentralizado" style="border: 7px solid rgb(0,255,255); border-radius: 10px;">
+					<p><strong> Sexo </strong></p>
+		  				 <div class="row">
+						    <div class="col-6">
+						      	<label for='male'><input id='male' type="radio" value="male" name="gender">Masculino</label>
+						   	</div>
+
+						    <div class="col-6">
+						      	<label for='female'><input id='female' type="radio" value="female" name="gender">Feminino</label>
+						   	 </div>
+						  </div>
+						
+		  			<div class="form-group">
+					    <label for="age">Idade</label>
+					    <input type="number" step="any" class="form-control" id="age" placeholder="22" maxlength="3">
+					 </div>
+
+					<div class="form-group">
+					   	<label for="height">Altura</label>
+					    <input type="number" step="any" class="form-control" id="height" placeholder="1,83" maxlength="3">
+					</div>
+
+					<div class="form-group">
+					   	<label for="weight">Peso</label>
+					    <input type="number" step="any" class="form-control" id="weight" placeholder="85,5" maxlength="5">
+					</div>
+
+					<p><strong> Atividade Fisica </strong></p>
+					<div class="row">
+						<div class="col-4">
+							<label for="athleticActivity_1"><input value="Sedentaria" name="athleticActivity" type="radio" >Sedentária</label>
+						</div>
+
+						<div class="col-4">
+						    <label for="athleticActivity_2"><input value="moderada" name="athleticActivity" type="radio" >Moderada</label>
+						</div>
+
+						<div class="col-4">
+						    <label for="athleticActivity_3"><input value="intensa" name="athleticActivity" type="radio" >Intensa</label>
+						</div>
+					</div>	
+
+					<div class="row">
+						<div class="col-6 offset-3">	
+							<button style="width: 100%; background-color: rgb(0,255,255); color: black; border: none" onclick="CalculoIMC()"><strong>Calcular IMC</strong></button>
+
+						</div>
+					</div>
+		   	
+				</form>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			var PesoInput =  document.getElementById("weight");
+			var AlturaInput = document.getElementById("height");
+	
+			function CalculoIMC(){
+				var Altura = AlturaInput.value;
+				var Peso = PesoInput.value;
+				var Resultado;
+
+				if(Altura == "" || Peso == "" ){
+					alert("Peso ou Altura Invalido!!!!\nEntre com os dados novamente!");
+					return;
+				}
+
+				Resultado = Peso / Math.pow(Altura,2);
+				if(Resultado <= 16.9){
+					alert("Seu Indice de Massa Corporal é " + Resultado.toFixed(2) + "\n Classificação: MUITO ABAIXO DO PESO \nTenha muito cuidado, você corre risco de: Queda de cabelo, infertilidade e ausência menstrual");
+				}
+
+				else if(Resultado >= 17 && Resultado <= 18.4){
+					alert("Seu Indice de Massa Corporal é " + Resultado.toFixed(2) + "\n Classificação: ABAIXO DO PESO \nTenha muito cuidado, você corre risco de: Fadiga, stress e ansiedade");
+				}
+
+				else if(Resultado >= 18.5 && Resultado <= 24.9 ){
+					alert("Seu Indice de Massa Corporal é " + Resultado.toFixed(2) + "\n Classificação: PESO NORMAL \nParabéns, você tem menor risco de doenças cardíacas e vasculares");
+				}
+
+				else if(Resultado >= 25 && Resultado <= 29.9){
+					alert("Seu Indice de Massa Corporal é " + Resultado.toFixed(2) + "\n Classificação: ACIMA DO PESO \nTenha muito cuidado, você corre risco de: Fadiga, má circulação e varizes");
+				}
+
+				else if(Resultado >= 30 && Resultado <= 34.9){
+					alert("Seu Indice de Massa Corporal é " + Resultado.toFixed(2) + "\n Classificação: OBESIDADE GRAU 1 \nTenha muito cuidado, você corre risco de: Diabetes, angina, infarto e aterosclerose");
+				}
+
+				else if(Resultado >= 35 && Resultado <= 40){
+					alert("Seu Indice de Massa Corporal é " + Resultado.toFixed(2) + "\n Classificação: OBESIDADE GRAU 2 \nTenha muito cuidado, você corre risco de: Apneia do sono e falta de ar");
+				}
+
+				else if(Resultado > 40){
+					alert("Seu Indice de Massa Corporal é " + Resultado.toFixed(2) + "\n Classificação: OBESIDADE GRAU 3 \nTenha muito cuidado, você corre risco de: Refluxo, dificuldade para se mover, escaras, diabetes, infarto e AVC");
+				}
+				return;
+
+				alert("Seu Indice de Massa Corporal é " + Resultado.toFixed(2));
+			}
+		</script>
+
+	</body>
+
+
+</html>
