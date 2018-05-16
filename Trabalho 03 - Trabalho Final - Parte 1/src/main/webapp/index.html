@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+       
+       	<link rel="stylesheet" href="css/bootstrap.min.css">
+       	<!-- Cabeçalho -->
+       	<link href="css/style.css" rel="stylesheet">
+       	<!-- Menu -->
+        <link href="css/menu.css" rel="stylesheet">
+        <!-- Formulario -->
+        <link href="css/form.css" rel="stylesheet">
+
+        <link href="css/pend.css" rel="stylesheet">
+
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    </head>
+    <body>
+        <header>
+            <input type="checkbox" id="control-nav" />
+            <label for="control-nav" class="control-nav"></label> <!-- adicionando a classe control-nav no checkbox -->
+            <label for="control-nav" class="control-nav-close"></label>
+            
+            <nav class="float-r">
+                <ul class="list-auto">
+                    <li>
+                        <a class="routerLink" data-ref="home" href="#Home" title="Home">Home</a>
+                    </li>
+
+                    <li>
+                        <a class="routerLink" data-ref="sobre" href="#Sobre" title="Sobre">Sobre</a>
+                    </li>
+                    <li>
+                        <a class="routerLink" data-ref="contact" href="#Contato" title="Contato">Contato</a>
+                    </li>
+                    <li>
+                        <a class="routerLink" data-ref="login" href="#Login" title="Login">Login</a>
+                    </li>
+                </ul>
+            </nav>    
+        </header>
+
+        <!-- Pushy Menu -->
+        <nav class="pushy pushy-left" data-focus="#first-link">
+            <div class="pushy-content">
+                <ul id="nav">
+                    <li class="pushy-submenu">
+                        <button id="first-link">Orçamentos</button>
+                        <ul>
+                        	<li class="pushy-link"><a class="routerLink" data-ref="cadastrar" href="#">Cadastrar</a></li>
+                            <li class="pushy-link"><a class="routerLink" data-ref="pendentes" href="#">Pendentes</a></li>
+                        </ul>
+                    </li>
+                    <li class="pushy-submenu">
+                        <button>Usuários</button>
+                        <ul>
+                            <li class="pushy-link"><a class="routerLink" data-ref="funcionario" href="#">Funcionário</a></li>
+                            <li class="pushy-link"><a class="routerLink" data-ref="cliente" href="#">Cliente</a></li>
+                        </ul>
+                    </li>
+                    <li class="pushy-link"><a href="#">Portifólio</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Your Content -->
+        <div id="container">
+            <button class="menu-btn">&#9776; Menu</button>
+
+            <!-- Menu Button -->
+            <div id="content"></div> 	
+        </div>
+
+        <!--<footer class="site-foooter push"> Rodapé </footer>-->
+
+    </body>
+
+    <!-- Menu JS -->
+    <script src="js/pushy.min.js"></script>
+    <!-- Trocar Div Menu JS-->
+    <script src="js/geral.js"></script>
+
+</html>

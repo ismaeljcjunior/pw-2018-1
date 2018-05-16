@@ -1,0 +1,84 @@
+.form-control{
+	color: white;
+}
+
+.Cadastro h1{
+	width: auto;
+	margin: 0 auto;
+	font-size: 50px;
+	color: white; 
+	text-align: center;
+	color: black;
+	margin-top: 10px;
+}
+
+.Cadastro .Contact label{
+	font-weight: bold;
+	color: white;
+	font-size: 20px;
+	margin-bottom: 5px;
+
+}
+
+.Cadastro form{
+    width: 800px;
+    margin: 15px auto 0 auto;
+    border: 2px solid white;
+    border-radius: 5px;
+    background-color: #B4AFAD;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.Contact form{
+	width: 500px;
+    margin: 10px auto 0 auto;	
+}
+
+.Contact p{
+	width: 800px;
+	margin-left: 230px;
+	font-weight: bold; 
+	color: white; 
+	text-align: center;
+}
+
+.Contact input{
+	margin-bottom: 5px;
+}
+
+.Contact button{
+	margin-top: 5px;
+	padding: 0 10px 0 10px;
+	text-align: center;
+}
+
+.Contact{
+	width: 800px;
+    margin: 15px auto 0 auto;
+    border: 2px solid white;
+    border-radius: 5px;
+    background-color: #B4AFAD;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+.Contact h5{
+    margin-left: 12px;
+    margin-top: 7px;
+    font-size: 20px;
+    color: black;
+    text-align: center;
+}
+
+.sobre{
+	width: 800px;
+    margin: 15px auto 0 auto;
+    border: 2px solid white;
+    border-radius: 5px;
+    background-color: #B4AFAD;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}

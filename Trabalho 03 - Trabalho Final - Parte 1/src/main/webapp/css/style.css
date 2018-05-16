@@ -1,0 +1,303 @@
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+ 
+}
+body, html{
+  height: 100%;
+}
+
+p{
+  margin: 1em 0;
+}
+
+button,input{
+  font-size: 100%; 
+  margin: 0; 
+  vertical-align: baseline; 
+  *vertical-align: middle; 
+}
+
+html,button,input{
+  font-family: sans-serif;
+}
+
+
+.float-r { float: right; } /* alinhando os itens do cabeçalho a direita*/
+
+.list-auto, .list-auto li { width: 100%; width: auto; float: left; display: block; position: static; } /* definindo como os itens do cabeçalho serão alinhados*/
+
+
+/* css do cabeçalho */
+/*background: url("../img/5.jpg") no-repeat;
+  background-size: 100% 100%;*/
+header {
+  min-height: 60px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  border-bottom: 1px solid #ccc;
+  background: black;
+  z-index: 2; /* necessario para poder abrir o menu quando tela for menor */
+}
+
+/* Não sei q diabos isso ta fazendo mais se tirar fica fei */
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* alinha cabeçalho*/
+header ul {
+  padding: 30px 10px 0 0;
+
+}
+
+/* borda entre os itens do cabeçalho*/
+header li {
+  border-left: 1px solid #ccc;
+}
+
+/* primeiro iten do cabeçalho sem borda a esquerda*/
+header li:first-child {
+  border: none;
+}
+
+
+/* config dos itens do cabeçalh*/
+header li a {
+  display: block;
+  padding: 0 15px;
+  color: white;
+  font-size: 16px;
+  line-height: 30px;
+  text-decoration: underline;
+  /*-webkit-transition: all 300ms ease;
+  transition: all 300ms ease;*/ /* não sei pra q serve */
+}
+
+header li a:hover {
+  color: gray;
+}
+
+input#control-nav {
+  visibility: hidden;
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+}
+
+
+/* Se a tela for menor 768px o cabeçalho muda estilo */
+@media screen and (max-width: 767px) {
+  header nav {
+    position: fixed;
+    top: 61px;
+    right: 0;
+    bottom: auto;
+    width: 250px;
+    border-left: 1px solid #ccc;
+    background: black;
+    overflow-x: auto; /* barra de rolagem para os elementos */
+    z-index: 2;
+    /* Não entendi, mas se tirar da merda */
+    -webkit-transition: all 500ms ease;
+    transition: all 500ms ease;
+    -webkit-transform: translate(100%, 0);
+    -ms-transform: translate(100%, 0);
+    transform: translate(100%, 0);
+  }
+
+/* preenchimento caixa itens cabeçalho menor q 768px*/
+  header ul.list-auto {
+    padding: 0;
+  }
+
+
+/* alinhamento itens cabeçalho menor q 768px*/
+  header ul.list-auto li {
+    width: 100%;
+    border: solid #ccc;
+    border-width: 0 0 1px;
+  }
+
+/* preenchimento cada iten cabeçalho menor q 768px*/
+  header li a {
+    padding: 15px 10px;
+  }
+
+  /** hover trocar quando colocar mouse**/
+  header li a:hover {
+    background-color: #40E0D0;
+  }
+
+
+/* label icon menor 768px */
+  .control-nav {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    display: block;
+    width: 30px;
+    padding: 5px 0;
+    border: solid white;
+    border-width: 3px 0;
+    z-index: 2;
+    cursor: pointer;
+  }
+  .control-nav:before {
+    content: "";
+    display: block;
+    height: 3px;
+    background: white;
+  }
+
+/* label icon layer "fundo" */
+  .control-nav-close {
+    position: fixed; 
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    z-index: 1;
+    background: rgba(0,0,0,0.4);
+    -webkit-transition: all 500ms ease;
+    transition: all 500ms ease;
+    -webkit-transform: translate(100%, 0);
+    -ms-transform: translate(100%, 0);
+    transform: translate(100%, 0);
+  }
+
+
+
+  /* parece não precisar 
+  /* checked nav 
+  input#control-nav { 
+    display: none;
+  }*/
+
+/* Parece ser apenas ccs pra o input
+  input#control-nav:focus ~ .control-nav {
+    border-color: #000;
+    box-shadow: 0px 0px 9px rgba(0,0,0,0.3);
+  }
+
+  input#control-nav:focus ~ .control-nav:before {
+    background: #000;
+  }*/
+
+/* abilitando do cabeçalho */
+  input#control-nav:checked ~ nav,
+  input#control-nav:checked ~ .control-nav-close {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+/* Container */
+#container {
+  position: relative;
+  padding: 20px 40px;
+  padding-top: 80px;
+  height: 100%;
+  background: url("../img/fundo.jpg") center center fixed;
+  background-size: cover; /*Css padrão*/
+  -webkit-background-size: cover; /*Css safari e chrome*/
+  -moz-background-size: cover; /*Css firefox*/
+  -ms-background-size: cover; /*Css IE não use mer#^@%#*/
+  -o-background-size: cover; /*Css Opera*/
+  background-attachment: fixed; 
+}
+
+/* Menu Button */
+.menu-btn {
+  width: 100px;
+  padding: 10px;
+  background: #000;
+  color: #FFF;
+  text-align: center;
+  cursor: pointer;
+  border: 0px;
+}
+.menu-btn:hover {
+  opacity: 0.6;
+}
+
+/* Rodapé*/
+.site-footer {
+  position: relative;
+  border-top: 1px solid #EEE;
+  color: #999;
+  padding: 10px;
+  font-size: 0.8em;
+  text-align: center;
+}
+
+
+
+
+section label{
+    color: #BDC3C7;
+}
+section h3{
+    color: #BDC3C7;
+}
+section h5{
+    color: #BDC3C7;
+}
+section a{
+    color: #BDC3C7;
+}
+
+.jumbotron{
+  margin-top: 10px;
+  background-color:#DFAD8C;
+}
+@media (min-width: 992px){
+ }
+
+
+.home{
+    width: 800px;
+    margin: 15px auto 0 auto;
+    border: 2px solid white;
+    border-radius: 5px;
+    background-color: #B4AFAD;
+    padding-left: 10px;
+    padding-right: 10px;
+ }
+
+ .home h1,h6,h4{
+    text-align: center;
+
+ }
+
+ .home p{
+    font-size: 20px
+    color: white;
+    text-align: center;
+  }
+
+  .home h5{
+    text-align: center;
+    font-size: 15px;
+    color: #A26767;
+  }
+
+  
+
+
+
+  
+
+/*-----------------------------------------------------------*/
+
+
+
